@@ -9,6 +9,140 @@ html {
 body {
     padding: 0;
     margin: 0;
+    overflow: hidden;
     background-color: rgba(248, 248, 248, 1);
     font-family: 'TT Lakes', sans-serif;
+
+}
+
+.content__title{
+    padding: 16px;
+    margin: 0;
+    background-color: #FFFFFF;
+    border-top: 1px solid #D9FFF5;
+    color: rgb(126, 126, 130);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-align: left;
+    text-transform: uppercase;
+}
+.content__list{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+.brands-swiper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.brands-swiper__slide {
+    width: 240px;
+    border: 1px solid rgb(234, 234, 234);
+    border-radius: 6px;
+    background: rgb(255, 255, 255);
+}
+
+.brands-pagination{
+    position: relative;
+    margin-top: 16px;
+}
+.brands-pagination-bullet-active {
+    background: rgb(181, 182, 188);
+}
+.brands-swiper__link{
+    padding: 16px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dropdown-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #FF3E79;
+    background-image: url("images/dropdown.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.show-button{
+    display:none;
+}
+.brands-swiper::after{
+    background: linear-gradient(270deg, #f8f8f8 16.836%, transparent);
+    content: "";
+    height: 81px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    z-index: 100;
+}
+@media (min-width: 768px) {
+    .brands-swiper::after{
+        display: none;
+    }
+
+    .content__list{
+        padding: 24px 0 0 24px;
+        height: 250px;
+        overflow: hidden;
+    }
+    .content__list.open{
+        height: 100%;
+    }
+    .brands-swiper__wrapper{
+        transform: translate3d(0px, 0px, 0px)!important;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 24px;
+    }
+    .brands-swiper__slide{
+        width: 224px;
+        height: 72px;
+    }
+
+    .active{
+    }
+    .show-button{
+        padding: 0;
+        margin-top: 24px;
+        display:flex;
+        background: none;
+        border: none;
+        color: rgb(27, 28, 33);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        text-align: left;
+        cursor: pointer;
+    }
+    .show-button::before{
+        content: url("./images/expand.svg");
+        display: block;
+        width: 24px;
+        height: 24px;
+    }
+    .show-button.rotate::before{
+        transform: rotate(180deg);
+        transition-duration: 200ms;
+    }
+}
+@media (min-width: 1120px){
+    .content{
+        max-width: 1120px;
+    }
+    .brands-swiper__wrapper{
+        gap: 16px 32px;
+    }
+    .brands-swiper__slide{
+        width: 240px;
+        height: 72px;
+    }
+    .content__list{
+        padding: 24px 0 0 32px;
+    }
 }
